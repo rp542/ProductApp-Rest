@@ -108,7 +108,6 @@ public class ProductControllerTest {
 		when(productService.findProductById(1234)).thenReturn(new Product(1234, "xxx", "yyy", 2340));
 		mockMvc.perform(delete("/products/1234")
 				.accept(MediaType.APPLICATION_JSON))
-		.andExpect(status().isOk())
-		.andDo(print());
+		.andExpect(status().isOk()).andDo(print());
 	}
 }

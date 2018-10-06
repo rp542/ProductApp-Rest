@@ -22,14 +22,18 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-	@PostMapping("/product")
+	/*@PostMapping("/product")
 	public @ResponseBody ResponseEntity<Product> addProduct(@RequestBody Product product) {
 		ResponseEntity<Product> responseEntity = new ResponseEntity<Product>(productService.addProduct(product),
 				HttpStatus.OK);
 
 		return responseEntity;
-	}
+	}*/
 
+	public @ResponseBody ResponseEntity<Product> addProduct(@RequestBody Product product){
+		ResponseEntity<Product> responseEntity=new ResponseEntity<Product>(productService.addProduct(product),HttpStatus.OK);
+	return responseEntity;
+	}
 	@PutMapping("/product")
 	public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
 		try {
